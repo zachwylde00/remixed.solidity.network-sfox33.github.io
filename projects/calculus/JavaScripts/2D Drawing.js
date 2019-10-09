@@ -77,11 +77,6 @@ function main() {
         return -1;
     }
 
-    var skeleton=true;
-    if(skeleton) {
-        document.getElementById("App_Title").innerHTML += "-Derivatives";
-    }
-
     //create GL buffer object for triangles
 	vBuffer_Tri = gl.createBuffer();
 	if(!vBuffer_Line) {
