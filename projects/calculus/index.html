@@ -1,0 +1,96 @@
+---
+layout: default
+title: Hank Quinlan, Horrible Cop
+---
+<div class="blurb">
+	<h1>Derivative and Integral Visualizations</h1>
+	<p>[Insert Project Description]</p>
+	<script id="vertex-shader" type="x-shader/x-vertex">
+
+        attribute vec4 a_Position;
+
+        void main() {   
+            gl_Position = a_Position;
+            gl_PointSize = 10.0;
+        } 
+    </script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+
+        precision mediump float;
+        uniform vec4 u_FragColor;
+
+        void main() {
+            gl_FragColor = u_FragColor;
+        }
+    </script>
+	
+	<div onload="main()">
+        <!-- create canvas -->
+        <h1 id = "App_Title">2D Drawing</h1>
+        
+        <div style="float:left">
+            <canvas id="webgl" width="600" height="600">
+                Please use a browser that supports "canvas"
+            </canvas>
+        </div>
+               
+        <!-- create GUI components -->
+        <div style="width:300px; float:left; margin-left:50px;">
+			<div id="toggleCalc">
+				<button id="toggleCalculus" style="margin-bottom:10px;margin-top:10px;height:40px; width:100px">View Integrals</button><br>
+			</div>
+            <div id="linBtn">
+				<button id="LinearButton" style="margin-bottom:10px;margin-top:10px;height:40px; width:100px">Linear</button><br>
+			</div>
+			<div id="quadBtn">
+				<button id="QuadButton" style="margin-bottom:10px;margin-top:10px;height:40px; width:100px">Quadratic</button><br>
+			</div>
+			<div id="cubBtn">
+				<button id="CubicButton" style="margin-bottom:10px;margin-top:10px;height:40px; width:100px">Cubic</button><br>
+			</div>
+			<div id="quarBtn">
+				<button id="QuarticButton" style="margin-bottom:10px;margin-top:10px;height:40px; width:100px">Quartic</button><br>
+			</div>
+			<div id="sinBtn">
+				<button id="SineButton" style="margin-bottom:10px;margin-top:10px;height:40px; width:100px">Sine</button><br>
+			</div>
+			<div id="leftRie" style="display:none">
+				<button id="LeftRiemann" style="margin-bottom:10px;margin-top:10px;height:40px;">Left Riemann Sum</button><br>
+			</div>
+			<div id="rightRie" style="display:none">
+				<button id="RightRiemann" style="margin-bottom:10px;margin-top:10px;height:40px;">Right Riemann Sum</button><br>
+			</div>
+            <div id="derivativeInfo">
+				h: <input type="range" id="hValue" min="-20" max="20" value="0">
+				<input type="text" id="hText" value="0">
+				<br>
+				x: <input type="range" id="xValue" min="-600" max="600" value="0"><br>
+				<input type="text" id="xText" value="0">
+				<br>
+				<label for="currPoint">Current Point: </label>
+				<input type="text" id="currPoint" value="">
+			</div>
+			<div id="integralInfo" style="display:none">
+				a: <input type="range" id="aValue" min="-60" max="60" value="0">
+				<input type="text" id="aText" value="0">
+				<br>
+				|b-a|: <input type="range" id="distValue" min="0" max="120" value="20"><br>
+				<input type="text" id="distText" value="2">
+				<br>
+				n: <input type="range" id="nValue" min="1" max="101" value="0"><br>
+				<input type="text" id="nText" value="1">
+				<br>
+			</div>
+        </div>
+
+        <!-- load JS scripts -->
+        <script src="../lib/webgl-utils.js"></script>
+        <script src="../lib/webgl-debug.js"></script>
+        <script src="../lib/cuon-utils.js"></script>
+        <script src="../lib/uncc_webgl_utils/uncc_webgl_utils.js"></script>
+        <script src="math2D.js"></script>
+        <script src="2D Drawing.js"></script>
+		<script>document.getElementById("webgl").oncontextmenu = function() {return false;};</script>
+    </div>
+</div>
