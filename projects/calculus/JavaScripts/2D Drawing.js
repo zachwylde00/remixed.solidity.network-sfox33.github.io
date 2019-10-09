@@ -32,7 +32,7 @@ var num_pts_line = 0;	//count number of points clicked for new line
 var num_pts_tri = 0;	//count number of points clicked for new triangle
 var num_pts_quad = 0;	//count number of points clicked for new quadrilateral
 
-var offset = 8;
+var offset = 200;  //Adjusting grid lines for viewing
 
 /*****
  * 
