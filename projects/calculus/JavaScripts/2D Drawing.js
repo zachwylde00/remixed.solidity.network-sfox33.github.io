@@ -156,6 +156,7 @@ function main() {
 	
     document.getElementById("LinearButton").addEventListener("click", function() {
         currFunction = Functions.Linear;
+		console.log("Linear clicked");
 		drawGrid(gl, canvas, a_Position, u_FragColor);
 		drawLinear(gl, canvas, a_Position, u_FragColor);
     });
